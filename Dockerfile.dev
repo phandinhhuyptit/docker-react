@@ -1,0 +1,17 @@
+FROM node:alpine
+
+MAINTAINER KelvinPhan <phandinhhuyit@gmail.com>
+
+WORKDIR /usr/app
+
+RUN npm i -g yarn 
+
+COPY package.json .
+
+RUN yarn install
+
+COPY ./ ./  
+
+RUN ls 
+
+CMD ["yarn","run","start"]
